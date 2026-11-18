@@ -1,4 +1,8 @@
 # Leetcode Challenges
 
 
-Problem 1: 2 Sum:
+Week1: 
+
+
+
+Week 2:
