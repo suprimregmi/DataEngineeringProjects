@@ -374,6 +374,21 @@ wheels = [
 ]
 
 [[package]]
+name = "databricks-dbt"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "dbt-core" },
+    { name = "dbt-databricks" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "dbt-core", specifier = ">=1.12.7" },
+    { name = "dbt-databricks", specifier = ">=1.13.1" },
+]
+
+[[package]]
 name = "databricks-sdk"
 version = "0.157.0"
 source = { registry = "https://pypi.org/simple" }
@@ -518,21 +533,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/7e/5a/ed1d0677688354df10d8d3edb0c2e7438787aa8c6c0153d6509ba0277060/dbt_databricks-1.13.1.tar.gz", hash = "sha256:39936ec3326e4a0ad8fd4789be42f189c2051e11bc5be3303762391381aec7f5", size = 145556, upload-time = "2026-11-19T12:48:26.557Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/11/ec/8e97e9bc62954519aee634cd52c860737f25424cf7eabc098f4f4ab7eeb1/dbt_databricks-1.13.1-py3-none-any.whl", hash = "sha256:70630eab576771925bd95be8364f2db938392210a7db1d533bdcd41b7d837f24", size = 209146, upload-time = "2026-11-19T12:48:25.217Z" },
-]
-
-[[package]]
-name = "dbt-databricksproject"
-version = "0.1.0"
-source = { editable = "." }
-dependencies = [
-    { name = "dbt-core" },
-    { name = "dbt-databricks" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "dbt-core", specifier = ">=1.12.7" },
-    { name = "dbt-databricks", specifier = ">=1.13.1" },
 ]
 
 [[package]]

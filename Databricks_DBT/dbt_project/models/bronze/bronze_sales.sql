@@ -1,0 +1,1 @@
+select * from dbt_practice_dev.source.fact_sales

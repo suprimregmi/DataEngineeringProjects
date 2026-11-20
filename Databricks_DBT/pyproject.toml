@@ -1,5 +1,5 @@
 [project]
-name = "dbt-databricksproject"
+name = "databricks-dbt"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [project.scripts]
-dbt-databricksproject = "dbt_databricksproject:main"
+databricks-dbt = "databricks_dbt:main"
 
 [build-system]
 requires = ["uv_build>=0.13.0,<0.14.0"]
