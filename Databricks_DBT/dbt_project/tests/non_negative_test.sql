@@ -1,0 +1,2 @@
+select * from {{ ref('bronze_sales') }} where gross_amount <0 and net_amount < 0 
+-- If this returns any rows, it means that there are negative values/ FAILED TEST ELSE PASS in the gross_amount and net_amount columns of the bronze_sales table.

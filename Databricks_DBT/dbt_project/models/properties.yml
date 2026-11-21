@@ -1,10 +1,60 @@
+
 version: 2
 
 models:
-  - name: bronze_date #  Must match the filename of a model -- including case sensitivity.
-    config:
-        materialized: view
-
-  - name: stg_jaffle_shop__orders
+  - name: bronze_date
+    # Must match the filename of the model
     config:
       materialized: view
+      schema: bronze
+
+  - name: bronze_product
+    config:
+      materialized: view
+
+  - name: bronze_sales
+    columns:
+      - name: sales_id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: store_sk
+        data_tests:
+          - unique
+          - not_null
+
+  - name: bronze_store
+    columns:
+      - name: store_name
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - 'MegaMart Manhattan'
+                  - 'MegaMart Brooklyn'
+                  - 'MegaMart Toronto'
+                  - 'MegaMart Austin'
+                  - 'MegaMart San Jose'
+              config:
+                severity: warn
+
+  - name: bronze_store
+    columns:
+      - name: store_sk
+        description: "The main foreign key"
+        data_tests:
+          - unique
+          - not_null
+      - name: country
+        description: "The country of the store"
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - 'USA'
+                  - 'Canada'
+              config:
+                severity: warn 
+
