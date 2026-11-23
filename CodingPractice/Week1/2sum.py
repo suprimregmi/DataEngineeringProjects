@@ -21,3 +21,14 @@ def two_sum(nums, target):
 result = two_sum([2, 7, 11, 3, 15], 10)
 print(result)
 
+
+
+
+# def twoSum(array, target):
+# 	hashmap ={}
+# 	 for i, j in enumerate(array):
+# 		 complement = target-j
+# 		 if complement in hashmap:
+# 			 return    [hashmap[complement] ,i]
+# 	     hashmap[j] =i
+# 	    return None
