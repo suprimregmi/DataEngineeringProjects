@@ -19,6 +19,10 @@ models:
         data_tests:
           - unique
           - not_null
+      - name: gross_amount
+        description: "The gross amount of the sale"
+        data_tests:
+          - generic_non_negative:
 
       - name: store_sk
         data_tests:
