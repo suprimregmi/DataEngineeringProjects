@@ -1,3 +1,4 @@
 
 
-{% macro multiply(x, y) %}{{ x * y }}{% endmacro %}
+
+{% macro multiply(x, y) %}({{ x }} * {{ y }}){% endmacro %}
