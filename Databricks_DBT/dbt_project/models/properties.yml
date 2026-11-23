@@ -19,10 +19,11 @@ models:
         data_tests:
           - unique
           - not_null
+
       - name: gross_amount
         description: "The gross amount of the sale"
         data_tests:
-          - generic_non_negative:
+          - generic_non_negative
 
       - name: store_sk
         data_tests:
@@ -44,13 +45,12 @@ models:
               config:
                 severity: warn
 
-  - name: bronze_store
-    columns:
       - name: store_sk
         description: "The main foreign key"
         data_tests:
           - unique
           - not_null
+
       - name: country
         description: "The country of the store"
         data_tests:
@@ -60,5 +60,4 @@ models:
                   - 'USA'
                   - 'Canada'
               config:
-                severity: warn 
-
+                severity: warn
