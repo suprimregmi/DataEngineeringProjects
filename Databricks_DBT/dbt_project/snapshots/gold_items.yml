@@ -1,5 +1,5 @@
 snapshots:
-  - name: gold_items
+  - name: db
     relation: ref('source_gold_items')
     config:
       strategy: timestamp
