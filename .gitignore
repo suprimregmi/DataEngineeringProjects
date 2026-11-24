@@ -1,0 +1,23 @@
+# dbt credentials — never commit
+profiles.yml
+.env
+
+# dbt build artifacts
+target/
+dbt_packages/
+logs/
+
+# Python / venv
+.venv/
+__pycache__/
+*.pyc
+
+profiles.yml
+# Ignore dbt / config profile secrets everywhere
+profiles.yml
+**/profiles.yml
+profile.yml
+**/profile.yml
+
+.user.yml
+.venv/
