@@ -6,4 +6,4 @@ snapshots:
       unique_key: id
       updated_at: updatedDate
       schema: gold
-      database: dbt_practice_dev
+      database: '{{ target.catalog }}'
