@@ -361,7 +361,6 @@ Or point `Python: Select Interpreter` to `.venv/Scripts/python.exe` and set `dbt
 | `'target' is undefined` in `analyses/` or `profiles.yml` | `target` not available there / circular ref | Remove it; use `dbt debug`; use `env_var()` in profiles |
 | `can't multiply sequence by non-int of type 'str'` | Macro did Python math on strings | Macro emits `({{ x }} * {{ y }})` |
 | `PARSE_SYNTAX_ERROR near 'category'` | Stray comma after last CTE | `)` not `),` before final `select` |
-| `UNRESOLVED_COLUMN j.product_id` | Column is `product_sk`; alias `j` undefined | Alias CTE, use `bs.product_sk` |
 | `dbt found two snapshots with name "gold_items"` | Legacy `.sql` snapshot + YAML snapshot | Delete/rename one |
 | `dbt Cloud CLI not found` | Extension in cloud mode | `dbtIntegration: core` |
 
