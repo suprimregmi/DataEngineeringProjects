@@ -2,16 +2,16 @@ dbt_project:
   outputs:
     dev:
       catalog: dbt_practice_dev
-      host: dbc-d62129b2-cc95.cloud.databricks.com
-      http_path: /sql/1.0/warehouses/f03e6f24acf0558f
+      host: #masked
+      http_path: #masked
       schema: default
       threads: 1
       token: #masked
       type: databricks
     prod:
       catalog: dbt_practice_prod
-      host: dbc-d62129b2-cc95.cloud.databricks.com
-      http_path: /sql/1.0/warehouses/f03e6f24acf0558f
+      host: # masked
+      http_path: #masked
       schema: default
       threads: 1
       token: #masked
