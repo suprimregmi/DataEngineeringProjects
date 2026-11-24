@@ -1,4 +1,4 @@
-#Readme
+# GitHub README 
 ```markdown
 # dbt on Databricks — Bronze/Silver/Gold Pipeline
 
@@ -411,37 +411,6 @@ If `profiles.yml` was already tracked: `git rm --cached profiles.yml`.
 - Run `dbt build --target prod`.
 - dbt uses **partial parsing** — unchanged files aren't re-parsed, speeding up runs.
 
----
-
-# LinkedIn Post — Flow/Diagram Guide
-
-## Option A: Simple text flow (easy to post as image or carousel)
-
-```
-Raw Data (Databricks)
-        │
-        ▼
-┌───────────────┐
-│   SOURCES     │  sources.yml — declare raw tables
-└───────┬───────┘
-        ▼
-┌───────────────┐
-│    BRONZE     │  select * from source() — stable, referenceable
-└───────┬───────┘
-        ▼
-┌───────────────┐
-│    SILVER     │  joins, casts, dedupe, derived cols — ref()
-└───────┬───────┘
-        ▼
-┌───────────────┐
-│     GOLD      │  facts, dims, aggregates — ref()
-└───────┬───────┘
-        ▼
-   BI / Analytics
-```
-
-## Option B: Mermaid diagram (renders on GitHub, Obsidian, LinkedIn via image export)
-
 ```mermaid
 flowchart TD
     A[Raw Data<br/>Databricks] --> B[Sources<br/>sources.yml]
@@ -469,28 +438,4 @@ flowchart TD
     end
 ```
 
-## Option C: LinkedIn carousel outline (5 slides)
 
-1. **Title:** "dbt on Databricks — from raw to gold"
-2. **Why dbt:** modularity, tests, lineage, Git — vs unmaintainable notebooks
-3. **The medallion flow:** diagram above
-4. **What makes it production-ready:** tests, snapshots, env parametrization (`env_var`), `dbt build`
-5. **One lesson learned:** `{{ target.catalog }}` in `profiles.yml` is circular — use `env_var()` instead
-
-## LinkedIn caption draft
-
-> Spent the week wiring dbt Core to Databricks. The mental model that finally clicked: dbt doesn't care about Bronze/Silver/Gold — *you* implement layers with folders + `ref()`, and dbt builds the DAG.
->
-> What made it production-ready:
-> ✅ Generic tests (unique, not_null, relationships) in schema.yml
-> ✅ Snapshots for SCD Type 2
-> ✅ env_var() to parametrize catalog per environment
-> ✅ dbt build = run + test in one command
->
-> Biggest gotcha: `catalog: '{{ target.catalog }}'` inside profiles.yml is circular — `target` is built *from* that file. Use `env_var()` with defaults.
->
-> #dbt #databricks #dataengineering #analyticsengineering
-
----
-
-# GitHub README Version
